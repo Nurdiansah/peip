@@ -1,0 +1,339 @@
+   <table border="1">
+      <tr>
+        <th>No</th>
+        <th>Tanggal</th>
+        <th>PIC</th>
+        <th>Lokasi</th>
+        <th>User</th>
+        <th>Permasalahan</th>
+        <th>Perbaikan</th>
+        <th>Sparepart</th>
+        <th>Keterangan</th>
+        <th>Foto</th>
+      </tr>
+      
+         <tr>
+         <td>1</td>
+         <td>2020-07-01</td>
+         <td>Aden Nurjana</td>
+         <td>Graha Segara</td>
+         <td>gress</td>
+         <td>PC gress tidak bisa print di printer epson 405 user zili</td>
+         <td>Sharing printer dari printer zili</td>
+         <td> -</td>
+         <td>Done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-07-01 at 3.14.14 PM.jpeg">WhatsApp Image 2020-07-01 at 3.14.14 PM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>2</td>
+         <td>2020-07-01</td>
+         <td>Aden Nurjana</td>
+         <td>Hayam Wuruk</td>
+         <td>Pajak</td>
+         <td>tidak ada jaringan internet & telpon setelah pembongkaran ruangan</td>
+         <td>penarikan & krimping kabel baru untuk jaringan & kabel telpon</td>
+         <td>RG 45, RG 11, terminal telpon</td>
+         <td>Done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/Aden.jpeg">Aden.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>3</td>
+         <td>2020-07-06</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 5</td>
+         <td>PLB</td>
+         <td>Internet loss</td>
+         <td>setting router PLB, online cctv camera</td>
+         <td>-</td>
+         <td>Done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-07-06 at 3.14.31 PM.jpeg">WhatsApp Image 2020-07-06 at 3.14.31 PM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>4</td>
+         <td>2020-07-09</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 4</td>
+         <td>Roni KJ 4</td>
+         <td>PC error</td>
+         <td>Upgrade Memory PC Pak Roni pakai Memory Exs KJ4</td>
+         <td>memory ex. KJ4</td>
+         <td>Done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>5</td>
+         <td>2020-07-09</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 1&2</td>
+         <td>Dadan</td>
+         <td>trouble windows error</td>
+         <td>iinstall windows 7</td>
+         <td>software windows 7</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>6</td>
+         <td>2020-07-09</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 5</td>
+         <td>PLB</td>
+         <td>setting cctv</td>
+         <td>setting cctv online via aplikasi</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>7</td>
+         <td>2020-07-22</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 4</td>
+         <td>Rini</td>
+         <td>PC error</td>
+         <td>Backup data, Instalasi windows 7, Instalasi driver printer L300</td>
+         <td>software windows 7, driver printer l300</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>8</td>
+         <td>2020-07-22</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 1&2</td>
+         <td>kJ1</td>
+         <td>internet trouble, tidak terkoneksi</td>
+         <td>Restart Router</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>9</td>
+         <td>2020-07-25</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 4</td>
+         <td>Server Kj4</td>
+         <td>Visit Indihome dan pengecekan internet KJ4 ruang server</td>
+         <td>Restart router Office KJ4</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>10</td>
+         <td>2020-08-05</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 5</td>
+         <td>Mekanik shop</td>
+         <td>internet loss</td>
+         <td>visit indihome pengecekan fiber optik yg terputus & penarikan kabel baru </td>
+         <td>kabel FO (indihome)</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>11</td>
+         <td>2020-08-06</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 5</td>
+         <td>PLB</td>
+         <td>panel box cctv PLB Area Open yard 10.000 KJ5 jatuh </td>
+         <td>Perbaikan panel box cctv PLB Area Open yard 10.000 KJ5 jatuh </td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-08-07 at 4.44.51 PM.jpeg">WhatsApp Image 2020-08-07 at 4.44.51 PM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>12</td>
+         <td>2020-08-10</td>
+         <td>Aden Nurjana</td>
+         <td>Kalijapat 5</td>
+         <td>PLB</td>
+         <td>kabel camera terputus</td>
+         <td>Penggantian kabel protektor pleksibel camera cctv area Open yard PLB</td>
+         <td>kabel protector fleksibel camera cctv</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>13</td>
+         <td>2020-07-01</td>
+         <td>Nurdiansah</td>
+         <td>Hayam Wuruk</td>
+         <td>Sigit sayogyo</td>
+         <td>laptop error</td>
+         <td>Scan and regenerator hdd pak Sigit sayogya</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>14</td>
+         <td>2020-07-07</td>
+         <td>Nurdiansah</td>
+         <td>Hayam Wuruk</td>
+         <td>Andrianto</td>
+         <td>excel bermasalah (error)</td>
+         <td>Setting excel </td>
+         <td> - </td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>15</td>
+         <td>2020-07-07</td>
+         <td>Nurdiansah</td>
+         <td>Kalijapat 4</td>
+         <td>KJ4</td>
+         <td>system</td>
+         <td>create tombol edit di checker</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>16</td>
+         <td>2020-08-05</td>
+         <td>Nurdiansah</td>
+         <td>Hayam Wuruk</td>
+         <td>eka</td>
+         <td>tidak bisa print</td>
+         <td>Sharing printer acc ke mba eka</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-08-05 at 9.36.04 AM.jpeg">WhatsApp Image 2020-08-05 at 9.36.04 AM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>17</td>
+         <td>2020-08-06</td>
+         <td>Nurdiansah</td>
+         <td>Hayam Wuruk</td>
+         <td>AR</td>
+         <td>tidak bisa print & Scan</td>
+         <td>Setup PC printer dan scanner AR</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-08-06 at 11.16.26 AM.jpeg">WhatsApp Image 2020-08-06 at 11.16.26 AM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>18</td>
+         <td>2020-08-07</td>
+         <td>Nurdiansah</td>
+         <td>Petrochina</td>
+         <td>Petrochina</td>
+         <td>Acces control rusak sudah tidak bisa di gunakan</td>
+         <td>Penggantian tombol acces control petrochina 6 unit</td>
+         <td>Acces control</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-08-07 at 4.10.26 PM.jpeg">WhatsApp Image 2020-08-07 at 4.10.26 PM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>19</td>
+         <td>2020-08-10</td>
+         <td>Nurdiansah</td>
+         <td>Hayam Wuruk</td>
+         <td>AR</td>
+         <td>source code</td>
+         <td>perubahan tarif kegiatan pada system AR , revisi tampilan berdasarkan client yang di pilih</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-08-10 at 4.05.00 PM.jpeg">WhatsApp Image 2020-08-10 at 4.05.00 PM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>20</td>
+         <td>2020-07-01</td>
+         <td>Ari Pratama</td>
+         <td>Jakarta Golf Club</td>
+         <td>Alvino</td>
+         <td>tidak bisa convert pdf</td>
+         <td>Instal nitro pro pdf & do pdf di laptop pak alvino</td>
+         <td>- </td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>21</td>
+         <td>2020-07-01</td>
+         <td>Ari Pratama</td>
+         <td>Hayam Wuruk</td>
+         <td>Andri</td>
+         <td>laptop error</td>
+         <td>Backup data laptop pak andri</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>22</td>
+         <td>2020-07-02</td>
+         <td>Ari Pratama</td>
+         <td>Jakarta Golf Club</td>
+         <td>Alvino</td>
+         <td>email Alvino minta password terus</td>
+         <td>case email done</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/WhatsApp Image 2020-07-02 at 3.06.38 PM.jpeg">WhatsApp Image 2020-07-02 at 3.06.38 PM.jpeg</a></td>
+      </tr>
+         <tr>
+         <td>23</td>
+         <td>2020-07-02</td>
+         <td>Ari Pratama</td>
+         <td>Hayam Wuruk</td>
+         <td>yosef</td>
+         <td>tidak bisa convert pdf</td>
+         <td>Instal office 2010 & nitro pro pdf dilaptop pak yosep</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>24</td>
+         <td>2020-07-03</td>
+         <td>Ari Pratama</td>
+         <td>Jakarta Golf Club</td>
+         <td>PEIP</td>
+         <td>license expired antivirus KIS sonia, alvino, geno</td>
+         <td>input license KIS sonia, alvino, geno (1Z9VM-KEBA6-YS85D-1FS8Z)</td>
+         <td>software KIS </td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>25</td>
+         <td>2020-07-03</td>
+         <td>Ari Pratama</td>
+         <td>Jakarta Golf Club</td>
+         <td>Dadang</td>
+         <td>tidak bisa print</td>
+         <td>Sharing printer dr laptop sonia ke printer pak dadang</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>26</td>
+         <td>2020-07-03</td>
+         <td>Ari Pratama</td>
+         <td>Jakarta Golf Club</td>
+         <td>Willz cafe</td>
+         <td>jaringan lemot</td>
+         <td>Penggantian switch di willz cafe</td>
+         <td>switch</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+         <tr>
+         <td>27</td>
+         <td>2020-07-06</td>
+         <td>Ari Pratama</td>
+         <td>Hayam Wuruk</td>
+         <td>Jamal HRD</td>
+         <td>permintaan instal microsoft visio</td>
+         <td>Instal microsoft Visio dilaptop pak jamal</td>
+         <td>-</td>
+         <td>done</td>
+         <td><a href="101.255.66.250/enc-doc/files/IT/"></a></td>
+      </tr>
+      </table>

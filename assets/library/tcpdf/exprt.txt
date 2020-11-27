@@ -1,0 +1,92 @@
+<?php
+
+function fetch_data(){
+//output
+  ob_end_clean();
+  include "../../../Connections/koneksi.php";
+
+  // if(isset($_GET['id'])) {
+  //   $idJoborder = $_GET['id'];
+  // }
+  $output = '';
+
+  $sql = mysql_query("SELECT * FROM laporan_it
+                      INNER JOIN area
+                        ON lokasi = kode_area
+                      ORDER BY tanggal ASC");
+  $i = 1;
+
+  while($row = mysql_fetch_array($sql)){
+    $output .= "<tr >
+                  <td style='text-align: center;'> $i </td>
+                  <td style='text-align: center;'>".$row['tanggal']."</td>
+                  <td style='text-align: center;'>".$row['pic']."</td>
+                  <td style='text-align: center;'>".$row['nm_area']."</td>
+                  <td style='text-align: center;'>".$row['user']."</td>
+                  <td style='text-align: center;'>".$row['permasalahan']."</td>
+                  <td style='text-align: center;'>".$row['perbaikan']."</td>
+                  <td style='text-align: center;'>".$row['sparepart']."</td>
+                  <td style='text-align: center;'>".$row['keterangan']."</td>
+                  <td style='text-align: center;'><img src='files/IT/". $row['file']."' ></td>
+                </tr>";
+                $i++;
+              }
+  return $output;
+}
+
+  require_once '../../../library/tcpdf/tcpdf.php';
+  $obj_pdf = new TCPDF('L', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8, false');
+  $obj_pdf->SetCreator(PDF_CREATOR);
+  $obj_pdf->SetTitle("Laporan Harian IT");
+  $obj_pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);
+  $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+  $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+  $obj_pdf->SetDefaultMonospacedFont('helvetica');
+  $obj_pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+  $obj_pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+  $obj_pdf->SetMargins(10, 15, 10);
+  $obj_pdf->setPrintHeader(false);
+  $obj_pdf->setPrintFooter(true);
+  $obj_pdf->setAutoPageBreak(true, PDF_MARGIN_BOTTOM);
+  $obj_pdf->SetFont('helvetica', '', 10);
+  $obj_pdf->AddPage();
+  // $style = array('width' => 0.7, 'dash' => '2, 2, 2, 2', 'phase' => 0);
+  // $obj_pdf->Line(5, 30, 290, 30, $style);
+  
+//content
+  $content = '';
+  // include "../../../Conections/koneksi.php";
+  // if(isset($_GET['id'])) {
+  //   $idJoborder = $_GET['id'];
+  // }
+
+  // $sqlJO = "SELECT * FROM job_order a
+  // INNER JOIN client b
+  //   ON a.id_client = b.id_client
+  // WHERE id_joborder = '$idJoborder'";
+  // $data = mysqli_query($koneksi, $sqlJO);
+  // $rowData = mysqli_fetch_array($data);
+
+  $content .= '<h3>Laporan Harian IT</h3>';
+  
+  $content .= '
+    <table border="1" cellspacing="0" cellpadding="2" align="center">
+      <tr>
+        <th style="text-align: center; width: 30px;" ><b>No</b></th>
+        <th style="text-align: center; width: 70px;" ><b>Tanggal</b></th>
+        <th style="text-align: center; width: 90px" ><b>PIC</b></th>
+    		<th style="text-align: center; width: 100px" ><b>Lokasi</b></th>
+        <th style="text-align: center; width: 80px" ><b>User</b></th>
+        <th style="text-align: center; width: 80px" ><b>Permasalaan</b></th>
+        <th style="text-align: center; width: 80px" ><b>Perbaikan</b></th>
+        <th style="text-align: center; width: 80px" ><b>Sparepart</b></th>
+        <th style="text-align: center; width: 100px" ><b>Keterangan</b></th>
+        <th style="text-align: center; width: 80px" ><b>Foto</b></th>
+      </tr>';
+  $content .= fetch_data();
+  $content .= '</table> <br><br><br>';
+
+  $obj_pdf->writeHTML($content);
+  $obj_pdf->Output('LaporanHarianIT.pdf', 'I');
+?>
+
