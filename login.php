@@ -1,26 +1,30 @@
 <?php
-session_start();
+	session_start();
 
-	include 'connect.php';
+	include "connect.php";
 	date_default_timezone_set("Asia/Bangkok");
 	$timenow = date("j-F-Y-h:i:s A");
 
-	if(isset($_POST['subm'])){
-		$uname = mysqli_real_escape_string($conn,$_POST['username']);
-		$upass = md5(mysqli_real_escape_string($conn,$_POST['password']));
+	if(isset($_POST['tombol_login'])){
+		$pengguna = mysqli_real_escape_string($conn, $_POST['uname']);
+		$kata_sandi = md5(mysqli_real_escape_string($conn, $_POST['upass']));
 
-		$login = mysqli_query($conn,"SELECT * FROM login where username='$uname' AND password='$upass' AND user_aktif='1';");
-		$cek = mysqli_num_rows($login);
+		$masuk = mysqli_query($conn, "SELECT * FROM login WHERE username = '$pengguna' AND password = '$kata_sandi' AND user_aktif = '1'");
+		$cek_masuk = mysqli_num_rows($masuk);
 
-		if($cek > 0){
-			$data = mysqli_fetch_assoc($login);
-			$_SESSION['_id'] = $data['id'];
-			$_SESSION['usr'] = $data['username'];
-			$_SESSION['nm'] = $data['nama'];
-			$_SESSION['lvl'] = $data['level'];
-			$_SESSION['jab'] = $data['jabatan'];
-			$_SESSION['log'] = "Logged";
+		if($cek_masuk > 0){
+			$data_masuk = mysqli_fetch_assoc($masuk);
+			$_SESSION['id_pengguna'] = $data_masuk['id'];
+			$_SESSION['nm_pengguna'] = $data_masuk['nama'];
+			$_SESSION['pengguna'] = $data_masuk['username'];
 			$_SESSION['time'] = $timenow;
+			if(isset($_POST['remember'])){
+				setcookie('usr', base64_encode($_POST['uname']), time() + 259200);
+				setcookie('pwd', base64_encode($_POST['upass']), time() + 259200);
+			}else{
+				setcookie('usr', base64_encode($_POST['uname']), time() - 259200);
+				setcookie('pwd', base64_encode($_POST['upass']), time() - 259200);
+			}
 			header('Location: module/index.php');
 		}else{
 			echo "<script>window.alert('Username atau password salah!');
@@ -28,71 +32,101 @@ session_start();
 					</script>";
 		}
 	}
-
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>ENC | IT - Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>PEIP | Login</title>
+	<link rel="shortcut icon" type="image/icon" href="assets/images/peip.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
-<!--===============================================================================================-->
+	<link rel="stylesheet" href="login.css">
+	<!-- <style>body{
+		background-image:url("bg.png");
+		background-size: cover;
+		background-position: center;
+		text-align: center;
+		height: 100%;
+	}
+	</style> -->
 </head>
+
 <body>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-b-160 p-t-50">
-				<form method="POST" class="login100-form validate-form">
-					<span class="login100-form-title p-b-43">
-						IT SISTEM
-					</span>
-
-					<div class="wrap-input100 rs1 validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="username">
-						<span class="label-input100">Username</span>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="assets/images/peip.png" class="brand_logo" alt="Logo">
 					</div>
-
-					<div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
-						<span class="label-input100">Password</span>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST">
+						<div class="form-group mb-4">
+							<h6 class="control-label" align="center"><strong>PT. Pelayaran Ekanuri Indra Pratama</strong></h6>
+						</div>
+						<?php if(isset($_COOKIE['usr']) && isset($_COOKIE['pwd'])){ ?>
+							<div class="input-group mb-3">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								<input type="text" name="uname" class="form-control input_user" value="<?= base64_decode($_COOKIE['usr']); ?>" placeholder="Username" required autofocus>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+								<input type="password" name="upass" class="form-control input_pass" value="<?= base64_decode($_COOKIE['pwd']); ?>" placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" checked="checked" name="remember" id="remember" title="Ingat saya dalam 3 hari">
+									<label class="custom-control-label" for="remember" title="Ingat saya dalam 3 hari">Ingat saya</label>
+								</div>
+							</div>
+						<?php }else{ ?>
+							<div class="input-group mb-3">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								<input type="text" name="uname" class="form-control input_user" placeholder="Username" required autofocus>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+								<input type="password" name="upass" class="form-control input_pass" placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" name="remember" id="remember" title="Ingat saya dalam 3 hari">
+									<label class="custom-control-label" for="remember" title="Ingat saya dalam 3 hari">Ingat saya</label>
+								</div>
+							</div>
+						<?php } ?>
+						<div class="form-group">
+							<input type="submit" name="tombol_login" class="btn login_btn" value="Login">
+						</div>
+					</form>
+				</div>
+				<!-- <div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
 					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" name="subm" type="submit">
-							Masuk
-						</button>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
 					</div>
-
-				</form>
+				</div> -->
 			</div>
 		</div>
 	</div>
 
-
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/select2/select2.min.js"></script>
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script src="js/main.js"></script>
-
+	<!------ Include the above in your HEAD tag ---------->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
