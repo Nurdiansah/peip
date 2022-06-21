@@ -1,21 +1,20 @@
 <?php
-	session_start();
-	if(empty($_SESSION['pengguna']) || $_SESSION['pengguna'] == '' || !isset($_SESSION['pengguna'])){
-		header("Location: ../logout.php");
-    };
+session_start();
+if (empty($_SESSION['pengguna']) || $_SESSION['pengguna'] == '' || !isset($_SESSION['pengguna'])) {
+    header("Location: ../logout.php");
+};
 
-	include '../connect.php';
-	date_default_timezone_set("Asia/Bangkok");
+include '../connect.php';
+date_default_timezone_set("Asia/Bangkok");
 
 ?>
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-	<link rel="icon"
-      type="image/png"
-      href="../favicon.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PT. Pelayaran Ekanuri Indra Pratama</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,24 +37,26 @@
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
     <!-- Datatable -->
-	<style>
-		div.dataTables_wrapper {
+    <style>
+        div.dataTables_wrapper {
             width: 100%;
             margin: 0 auto;
         }
-	</style>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <style>
-		.huruf_besar{
-			text-transform: uppercase;
-		}
-		.huruf_kecil{
-			text-transform: lowercase;
-		}
-		.awal_besar{
-			text-transform: capitalize;
-		}
-	</style>
+        .huruf_besar {
+            text-transform: uppercase;
+        }
+
+        .huruf_kecil {
+            text-transform: lowercase;
+        }
+
+        .awal_besar {
+            text-transform: capitalize;
+        }
+    </style>
 </head>
 
 <body>
@@ -72,7 +73,7 @@
         <!-- sidebar menu area start -->
         <div class="sidebar-menu">
             <div class="sidebar-header">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <!-- <img src="../assets/images/peip.png" alt="logo" height="70px" width="70px"> -->
                 <a href="http://ekanuri.com" target="_blank"><img src="../assets/images/logoenc_NEW.jpg" alt="logo" height="115px" width="115px"></a>
             </div>
@@ -185,7 +186,7 @@
                                             <li><a href="index.php?p=dokumen&folder=<?= base64_encode('OPS0061'); ?>">Time Sheet Charter</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="index.php?p=dokumen&folder=<?= base64_encode('OPS0062'); ?>">Mitra Anugerah 32</a>
+                                    <li><a href="index.php?p=dokumen&folder=<?= base64_encode('OPS0062'); ?>">Enc One ex Mitra Anugerah 32</a>
                                         <ul>
                                             <li><a href="index.php?p=dokumen&folder=<?= base64_encode('OPS0063'); ?>">Certificate</a>
                                                 <ul>
@@ -1240,8 +1241,8 @@
     <!-- start zingchart js -->
     <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <script>
-    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
     </script>
     <!-- all line chart activation -->
     <script src="../assets/js/line-chart.js"></script>
@@ -1270,30 +1271,30 @@
     </script>
 
     <div id="ubah_password" class="modal fade">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Ubah Password <strong><?= $_SESSION['nm_pengguna']; ?></strong></h5>
-				</div>
-				<div class="modal-body">
-					<form method="POST" action="ubah_password.php">
-						<div class="form-group">
-							<label for="username">Username</label>
-							<input type="text" name="username" id="username" class="form-control" value="<?= $_SESSION['pengguna']; ?>" placeholder="Username" readonly>
-						</div>
-						<div class="form-group">
-							<label for="pass">Password Baru</label>
-							<input type="password" name="pass" id="pass" class="form-control" placeholder="Password Baru" required autocomplete="off" autofocus>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">Batal</button>
-						<input name="ubah_pass" type="submit" class="btn btn-info btn-xs" value="Simpan">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ubah Password <strong><?= $_SESSION['nm_pengguna']; ?></strong></h5>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="ubah_password.php">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" class="form-control" value="<?= $_SESSION['pengguna']; ?>" placeholder="Username" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password Baru</label>
+                            <input type="password" name="pass" id="pass" class="form-control" placeholder="Password Baru" required autocomplete="off" autofocus>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">Batal</button>
+                    <input name="ubah_pass" type="submit" class="btn btn-info btn-xs" value="Simpan">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 
